@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Petrus & Mariëtte</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <a href="index.html" class="header-logo">P & M</a>
+    </header>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-page">
+        <div class="container">
+            <h1 class="section-title">RSVP</h1>
+            <p class="rsvp-subtitle">Laat ons weet of jy saam met ons gaan vier!</p>
+            <p class="rsvp-deadline-text">Antwoord asseblief voor 12 Desember 2025</p>
+            
+              <form class="rsvp-form" id="rsvpForm">
+                  <!-- Guest 1 Details -->
+                  <div id="guest1Section" class="guest-section">
+                      <h3>Gas 1 Besonderhede</h3>
+                      <div class="form-group">
+                          <label for="guest1Name">Naam *</label>
+                          <input type="text" id="guest1Name" name="guest1Name" required>
+                      </div>
+                      
+                      <div class="form-group">
+                          <label for="guest1Surname">Van *</label>
+                          <input type="text" id="guest1Surname" name="guest1Surname" required>
+                      </div>
+                      
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="attendance">Sal jy bywoon? *</label>
+                    <select id="attendance" name="attendance" required class="form-select">
+                        <option value="">Kies 'n opsie...</option>
+                        <option value="no">Nee, ek kan nie bywoon nie</option>
+                        <option value="yes">Ja, ek sal alleen bywoon</option>
+                        <option value="yes_guest">Ja, ek sal met 'n metgesel bywoon</option>
+                    </select>
+                </div>
+
+                <!-- Guest 2 Details -->
+                <div id="guest2Section" class="guest-section" style="display: none;">
+                    <h3>Gas 2 Besonderhede</h3>
+                    <div class="form-group">
+                        <label for="guest2Name">Naam *</label>
+                        <input type="text" id="guest2Name" name="guest2Name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guest2Surname">Van *</label>
+                        <input type="text" id="guest2Surname" name="guest2Surname">
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="songRequest">Liedjie Versoek</label>
+                    <input type="text" id="songRequest" name="songRequest" placeholder="Watter liedjie wil jy hoor by die onthaal?">
+                </div>
+
+                <div class="form-group">
+                    <label for="bibleVerse">Bybel vers vir die bruid en bruidegom</label>
+                    <textarea id="bibleVerse" name="bibleVerse" rows="3" placeholder="Deel 'n spesiale Bybel vers..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Stuur RSVP</button>
+            </form>
+            
+            <div class="rsvp-success" id="rsvpSuccess" style="display: none;">
+                <h3>Dankie!</h3>
+                <p>Jou RSVP is suksesvol gestuur. Ons sien uit daarna om jou by die troue te sien!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Petrus & Mariëtte. Met liefde gemaak.</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // TODO: Replace YOUR_PUBLIC_KEY with your actual EmailJS public key
+            emailjs.init("PVZMA24ymy3anEyyO");
+        })();
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

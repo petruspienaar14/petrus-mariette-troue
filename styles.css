@@ -1,0 +1,1547 @@
+/* CSS Variables for Wedding Color Palette */
+:root {
+    --primary: #06402B;
+    --primary-light: rgba(6, 64, 43, 0.9);
+    --primary-fade: rgba(6, 64, 43, 0.1);
+    --white: #ffffff;
+    --off-white: #f8f8f8;
+    --gray-light: #e5e5e5;
+    --gray: #808080;
+    --text-dark: #06402B;
+    --text-light: #4A6B5D;
+    --shadow: rgba(6, 64, 43, 0.1);
+    --shadow-hover: rgba(6, 64, 43, 0.15);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.script-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1.5rem 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.header-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    letter-spacing: 2px;
+}
+
+.header-logo:hover {
+    color: var(--primary-light);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero.no-nav {
+    padding-top: 0;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/couple-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    z-index: 2;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
+    position: relative;
+    z-index: 3;
+}
+
+.couple-names {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.wedding-date {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.rsvp-deadline {
+    font-size: 1.2rem;
+    color: var(--off-white);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-style: italic;
+}
+
+.wedding-location {
+    font-size: 1.2rem;
+    color: var(--off-white);
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 3rem;
+}
+
+/* Countdown Timer - Mobile First */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(6, 64, 43, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 60px;
+    border: 1px solid rgba(6, 64, 43, 0.2);
+}
+
+.countdown-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    line-height: 1;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--off-white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tablet and Desktop styles */
+@media (min-width: 768px) {
+    .countdown-container {
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .countdown-item {
+        padding: 1rem;
+        min-width: 80px;
+        border-radius: 12px;
+    }
+
+    .countdown-number {
+        font-size: 2.5rem;
+    }
+
+    .countdown-label {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* Hero Bottom Actions */
+.hero-bottom-actions {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.rsvp-button {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--primary);
+}
+
+.rsvp-button:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Location Pin Styles */
+.location-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.location-pin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.location-pin:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.pin-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Shared Section Styles */
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.location-text {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Church Section */
+.church-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.church-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.church-image {
+    width: 100%;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.church-photo {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.church-photo:hover {
+    transform: scale(1.02);
+}
+
+.church-info {
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.church-info h3 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.church-location {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.church-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.church-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.church-detail {
+    background: var(--primary-fade);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--primary);
+}
+
+.church-detail h4 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.church-detail p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Venue Section */
+.venue-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.venue-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.venue-image {
+    width: 100%;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.venue-photo {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.venue-photo:hover {
+    transform: scale(1.02);
+}
+
+.venue-info {
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.venue-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.venue-address {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.venue-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.venue-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.venue-detail {
+    background: var(--primary-fade);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--primary);
+}
+
+.venue-detail h4 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.venue-detail p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .location-wrapper {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .location-pin {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .pin-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .church-info h3,
+    .venue-name {
+        font-size: 2rem;
+    }
+
+    .church-photo,
+    .venue-photo {
+        min-height: 200px;
+    }
+
+    .church-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .church-detail,
+    .venue-info-block {
+        padding: 1.5rem;
+    }
+
+    .venue-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .venue-detail {
+        padding: 1.5rem;
+    }
+
+    .venue-detail h4 {
+        font-size: 1.2rem;
+    }
+
+    .venue-detail p {
+        font-size: 1rem;
+    }
+}
+
+/* Information Section */
+.information-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.info-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-block {
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-light);
+    text-align: left;
+}
+
+.info-block:last-child {
+    border-bottom: none;
+}
+
+.info-block h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.info-block p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.accommodation-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.accommodation-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.accommodation-link:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.external-link-icon {
+    width: 14px;
+    height: 14px;
+}
+
+@media (max-width: 768px) {
+    .accommodation-links {
+        justify-content: center;
+    }
+    
+    .accommodation-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .external-link-icon {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Schedule Section */
+.schedule-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.schedule-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.schedule-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.schedule-block:last-child {
+    border-bottom: none;
+}
+
+.schedule-block .time {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    min-width: 100px;
+}
+
+.schedule-block .event {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+/* Couple Photos */
+.couple-photo {
+    display: none; /* Hidden by default on desktop */
+}
+
+.photo-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 6s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Couple Photo 1 - Fade effect */
+.couple-1 .overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
+.couple-1 .photo-background {
+    transform: scale(1.05);
+}
+
+.couple-1:hover .photo-background {
+    transform: scale(1);
+}
+
+/* Couple Photo 2 - Full width with 3:4 ratio */
+.couple-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+}
+
+.couple-2 {
+    position: relative;
+    width: 100%;
+    padding-top: 133.33%; /* 3:4 aspect ratio */
+    overflow: hidden;
+}
+
+.couple-2 .photo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.couple-2 .photo-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    object-fit: cover;
+}
+
+.couple-2:hover .photo-background {
+    transform: scale(1.1);
+}
+
+.couple-2 .gradient-overlay {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), transparent);
+}
+
+@media (max-width: 768px) {
+    .couple-2 {
+        padding-top: 133.33%; /* Maintain 3:4 ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-2 {
+        padding-top: 133.33%; /* Maintain 3:4 ratio */
+    }
+}
+
+/* Couple Photo 3 - Vignette effect */
+.couple-3 .vignette-overlay {
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.couple-3 .photo-background {
+    transform: scale(1);
+    transition: transform 8s ease;
+}
+
+.couple-3:hover .photo-background {
+    transform: scale(1.15);
+}
+
+/* Portrait Fullscreen Photo */
+.fullscreen-photo.portrait {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.portrait-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.portrait-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 6s ease;
+}
+
+.fullscreen-photo.portrait:hover .portrait-photo {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .fullscreen-photo.portrait {
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portrait-container {
+        height: 60vh;
+        width: 45vh; /* 3:4 ratio */
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .fullscreen-photo.portrait {
+        height: 50vh;
+    }
+
+    .portrait-container {
+        height: 50vh;
+        width: 37.5vh; /* 3:4 ratio */
+    }
+}
+
+
+/* Wishing Well Section */
+.wishing-well-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.wishing-well-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wishing-well-text {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.wishing-well-poem {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.bank-details {
+    background: var(--off-white);
+    padding: 2rem;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+.bank-details h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.bank-details p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.timeline-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.timeline-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary);
+    transform: translateX(-50%);
+}
+
+.timeline-event {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-event.left {
+    justify-content: flex-end;
+    padding-right: 50%;
+}
+
+.timeline-event.right {
+    justify-content: flex-start;
+    padding-left: 50%;
+}
+
+.event-content {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.event-text {
+    text-align: left;
+}
+
+.event-time {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.event-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 3px 10px var(--shadow);
+    flex-shrink: 0;
+}
+
+.event-connector {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background: var(--primary);
+    border-style: dashed;
+    border-width: 0 0 2px 0;
+    z-index: 1;
+}
+
+.timeline-event.left .event-connector {
+    right: -15px;
+    transform: translateY(-50%);
+}
+
+.timeline-event.right .event-connector {
+    left: -15px;
+    transform: translateY(-50%);
+}
+
+.timeline-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+.couple-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Details Section */
+.details-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.detail-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-hover);
+}
+
+.detail-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.detail-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.detail-card p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+/* Image Collage Section */
+.collage-section {
+    padding: 0;
+    background: var(--white);
+}
+
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--white);
+}
+
+.collage-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.collage-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.05);
+}
+
+.rsvp-collage-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.rsvp-collage-link span:first-child {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.rsvp-collage-link .rsvp-deadline {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.rsvp-collage-link:hover {
+    background: var(--white);
+    color: var(--primary);
+    outline: 2px solid var(--primary);
+}
+
+@media (max-width: 768px) {
+    .collage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .collage-item.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .collage-grid {
+        grid-template-columns: 1fr;
+        gap: 1px;
+    }
+    
+    .collage-item.large {
+        grid-column: span 1;
+    }
+}
+
+/* RSVP Page */
+.rsvp-page {
+    padding: 8rem 0 5rem;
+    background: var(--off-white);
+}
+
+.rsvp-deadline-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.rsvp-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--shadow);
+    border: 2px solid var(--gray-light);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray-light);
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px var(--shadow);
+}
+
+.rsvp-success {
+    text-align: center;
+    padding: 3rem;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--shadow);
+    border: 2px solid var(--gray-light);
+}
+
+.rsvp-success h3 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.rsvp-success p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .couple-photo {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+    }
+
+    .rsvp-deadline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px var(--shadow);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Venue Section Mobile */
+    .venue-name {
+        font-size: 2rem;
+    }
+
+    .venue-info-block {
+        padding: 1.5rem;
+    }
+
+    .venue-info-block h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Information Section Mobile */
+    .info-block {
+        padding: 1.5rem;
+    }
+
+    .info-block h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Schedule Section Mobile */
+    .schedule-block {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .schedule-block .time {
+        font-size: 1.3rem;
+        min-width: 80px;
+    }
+
+    .schedule-block .event {
+        font-size: 1.1rem;
+    }
+
+    /* Wishing Well Section Mobile */
+    .wishing-well-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .bank-details {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .bank-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .bank-details p {
+        font-size: 1rem;
+    }
+
+    /* RSVP Section Mobile */
+    .rsvp-form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .radio-group {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-photo {
+        height: 50vh;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Venue Section Small Mobile */
+    .venue-name {
+        font-size: 1.8rem;
+    }
+
+    .venue-info-block {
+        padding: 1.2rem;
+    }
+
+    /* Information Section Small Mobile */
+    .info-block {
+        padding: 1.2rem;
+    }
+
+    /* Schedule Section Small Mobile */
+    .schedule-block {
+        padding: 1.2rem;
+        gap: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .schedule-block .time {
+        min-width: auto;
+    }
+
+    /* Wishing Well Section Small Mobile */
+    .bank-details {
+        padding: 1.2rem;
+    }
+
+    /* RSVP Section Small Mobile */
+    .rsvp-form {
+        padding: 1.2rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Form validation styles */
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #10b981;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for better accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
